@@ -1,0 +1,40 @@
+.top-bar {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    /* background: var(--color-surface); -- Optional: make it distinct or transparent */
+    /* border-bottom: 1px solid var(--color-border); -- Optional */
+}
+
+.search-form {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.25rem;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    background-color: var(--color-background);
+    /* Or surface variant */
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+}
