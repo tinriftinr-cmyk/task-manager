@@ -14,7 +14,7 @@ interface SmartListPageProps {
 }
 
 export const SmartListPage: React.FC<SmartListPageProps> = ({ title, filterType, tagFilter }) => {
-    const { tasks, addTask, toggleTaskCompletion, deleteTask } = useTasks();
+    const { tasks, addTask, toggleTaskCompletion, deleteTask, reorderTasks } = useTasks();
 
     if (!tasks) return <div>読み込み中...</div>;
 
@@ -69,6 +69,7 @@ export const SmartListPage: React.FC<SmartListPageProps> = ({ title, filterType,
                     tasks={incompleteTasks}
                     onToggle={toggleTaskCompletion}
                     onDelete={deleteTask}
+                    onReorder={reorderTasks}
                 />
 
                 {completedTasks.length > 0 && (
@@ -79,6 +80,7 @@ export const SmartListPage: React.FC<SmartListPageProps> = ({ title, filterType,
                                 tasks={completedTasks}
                                 onToggle={toggleTaskCompletion}
                                 onDelete={deleteTask}
+                                onReorder={reorderTasks}
                             />
                         </div>
                     </>

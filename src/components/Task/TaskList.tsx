@@ -8,6 +8,7 @@ interface TaskListProps {
     tasks: Task[];
     onToggle: (id: number, isCompleted: boolean) => void;
     onDelete: (id: number) => void;
+    onReorder?: (newOrder: Task[]) => void;
 }
 
 export const TaskList: React.FC<TaskListProps> = ({ tasks, onToggle, onDelete }) => {

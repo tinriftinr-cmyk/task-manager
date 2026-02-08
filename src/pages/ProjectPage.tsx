@@ -12,7 +12,7 @@ import './Inbox.css'; // Reuse inbox styles for now
 export const ProjectPage: React.FC = () => {
     const { tagId } = useParams<{ tagId: string }>();
     const listId = Number(tagId);
-    const { tasks, addTask, toggleTaskCompletion, deleteTask } = useTasks();
+    const { tasks, addTask, toggleTaskCompletion, deleteTask, reorderTasks } = useTasks();
     const { lists } = useLists();
     const [currentList, setCurrentList] = useState<ITaskList | null>(null);
 
@@ -61,6 +61,7 @@ export const ProjectPage: React.FC = () => {
                     tasks={incompleteTasks}
                     onToggle={toggleTaskCompletion}
                     onDelete={deleteTask}
+                    onReorder={reorderTasks}
                 />
 
                 {completedTasks.length > 0 && (
@@ -71,6 +72,7 @@ export const ProjectPage: React.FC = () => {
                                 tasks={completedTasks}
                                 onToggle={toggleTaskCompletion}
                                 onDelete={deleteTask}
+                                onReorder={reorderTasks}
                             />
                         </div>
                     </>

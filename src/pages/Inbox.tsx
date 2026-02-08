@@ -43,12 +43,11 @@ export const Inbox: React.FC = () => {
             </header>
 
             <div className="task-container">
-                <TaskEditor onAdd={(title, tags, dueDate) => addTask({
+                <TaskEditor onAdd={(title, lid, dueDate) => addTask({
                     title,
                     isCompleted: false,
                     priority: 'medium',
-                    listId: 1, // Default to inbox
-                    tags,
+                    listId: lid,
                     dueDate
                 })} />
 
